@@ -37,16 +37,6 @@ except FileNotFoundError:
 print(f"Current working directory: {os.getcwd()}")  # Debugging
 print(f"Files in Save_model: {os.listdir('Save_model')}") # Debugging
 
-diabetes_model_path = r"C:\Users\Pratham Singh Yadav\OneDrive\Desktop\Outbreak\Save_model\diabetes_model.sav"
-heart_model_path = r"C:\Users\Pratham Singh Yadav\OneDrive\Desktop\Outbreak\Save_model\heart-disease-mode.sav"
-parkinsons_model_path = r"C:\Users\Pratham Singh Yadav\OneDrive\Desktop\Outbreak\Save_model\parkinson's_model.sav"
-with open(diabetes_model_path, 'rb') as file:
-    diabetes_model = pickle.load(file)
-with open(heart_model_path, 'rb') as file:
-    heart_model = pickle.load(file)
-with open(parkinsons_model_path, 'rb') as file:
-    parkinsons_model = pickle.load(file)
-
 with st.sidebar:
     selected = option_menu(
         menu_title="Prediction of Disease Outbreak",
