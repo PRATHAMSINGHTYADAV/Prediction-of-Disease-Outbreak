@@ -10,7 +10,7 @@ st.set_page_config(page_title='Prediction of Disease Outbreak',
 
 diabetes_model_path = r'Save_model\diabetes_model.sav'
 heart_model_path = r'Save_model\heart-disease-mode.sav'
-parkinsons_model_path = r'Save_model\parkinsons_model.sav'
+parkinsons_model_path = r"Save_model\parkinson's_model.sav"
 with open(diabetes_model_path, 'rb') as file:
     diabetes_model = pickle.load(file)
 with open(heart_model_path, 'rb') as file:
