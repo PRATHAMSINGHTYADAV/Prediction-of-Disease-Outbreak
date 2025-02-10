@@ -12,6 +12,31 @@ diabetes_model_path = os.path.join("Save_model", "diabetes_model.sav")
 heart_model_path = os.path.join("Save_model", "heart-disease-mode.sav")
 parkinsons_model_path = os.path.join("Save_model", "parkinson's_model.sav")
 
+try:
+    with open(diabetes_model_path, 'rb') as file:
+        diabetes_model = pickle.load(file)
+except FileNotFoundError:
+    print(f"Error: Diabetes model file not found at {diabetes_model_path}")
+    # Handle the error appropriately, e.g., exit or use a default model
+    exit()  # Or st.error("Diabetes model not found!") for Streamlit
+
+try:
+    with open(heart_model_path, 'rb') as file:
+        heart_model = pickle.load(file)
+except FileNotFoundError:
+    print(f"Error: Heart model file not found at {heart_model_path}")
+    exit()
+
+try:
+    with open(parkinsons_model_path, 'rb') as file:
+        parkinsons_model = pickle.load(file)
+except FileNotFoundError:
+    print(f"Error: Parkinson's model file not found at {parkinsons_model_path}")
+    exit()
+
+print(f"Current working directory: {os.getcwd()}")  # Debugging
+print(f"Files in Save_model: {os.listdir('Save_model')}") # Debugging
+
 diabetes_model_path = r"C:\Users\Pratham Singh Yadav\OneDrive\Desktop\Outbreak\Save_model\diabetes_model.sav"
 heart_model_path = r"C:\Users\Pratham Singh Yadav\OneDrive\Desktop\Outbreak\Save_model\heart-disease-mode.sav"
 parkinsons_model_path = r"C:\Users\Pratham Singh Yadav\OneDrive\Desktop\Outbreak\Save_model\parkinson's_model.sav"
